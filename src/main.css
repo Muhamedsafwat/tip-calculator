@@ -1,0 +1,154 @@
+* {
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Space Mono", monospace;
+  background-color: #c5e4e7;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.app {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  gap: 30px;
+  width: 80vw;
+  max-width: 600px;
+}
+.inputs {
+  color: #768485;
+  width: 45%;
+}
+input {
+  background-color: #e3f2fa !important;
+  border-radius: 5px;
+  padding: 9px;
+  border: none;
+  color: #124244 !important;
+  font-weight: bold;
+}
+input:not(.custom) {
+  width: 100%;
+}
+input:focus {
+  outline: none;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(calc(33.3% - 20px / 3), 400px));
+  gap: 10px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+input.first {
+  margin-bottom: 20px;
+}
+.grid button {
+  aspect-ratio: 2.5 / 1;
+  text-align: center;
+  background-color: #00474b;
+  border-radius: 7px;
+  color: white;
+  font-weight: normal;
+  font-size: 17px;
+  margin: 0;
+  padding: 10px;
+}
+
+.custom {
+  aspect-ratio: 3 / 1;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.results {
+  background-color: #00474b;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  color: rgb(226, 225, 225);
+  font-weight: bold;
+}
+.flex span {
+  display: block;
+  font-size: 13px;
+  color: #768485;
+  font-weight: normal;
+}
+.digits {
+  font-size: 22px;
+  color: #26c2ad;
+}
+
+.results button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #0d686d;
+  width: 90%;
+  padding: 10px;
+  border-radius: 7px;
+  color: #035d5b;
+  font-size: 16px;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #26c2ad;
+  color: #035d5b;
+}
+button {
+  border: none;
+  outline: none;
+}
+
+.valid {
+  border: 1px solid rgba(0, 128, 0, 0.5);
+}
+.invalid {
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}
+.grid .selected {
+  background-color: #26c2ad;
+  color: #035d5b;
+  font-weight: bold;
+}
+
+@media (max-width: 500px) {
+  .app {
+    flex-direction: column;
+  }
+  .inputs,
+  .results {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .results button {
+    position: relative;
+    margin-top: 2rem;
+    bottom: 0;
+  }
+}
